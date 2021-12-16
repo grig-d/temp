@@ -6,8 +6,11 @@ const ref = {
 ref.container.addEventListener('click', message);
 
 function message(event) {
-  console.log(event.target);
-  console.log(event.currentTarget);
+  if(event.target.tagName === 'LI') {
+  console.log(event.target.tagName);
+  console.log(event.target.parentElement.tagName);
+  event.target.parentElement.append('li');
+  }
 
 }
 
@@ -18,3 +21,4 @@ console.log(ref.row);
 // function makeBlink () {
 //     // body
 // }
+
