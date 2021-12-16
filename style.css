@@ -29,7 +29,7 @@ body {
 }
 
 @keyframes blink {
-  0% {
+  50% {
     background-color: plum;
   }
 }

@@ -55,21 +55,42 @@ ref.row.addEventListener('click', addQuad);
 function addQuad(event) {
   if (event.target.classList.contains('quad')) {
     const parent = event.target.parentElement;
+    if (parent.childNodes.length > 1 && event.target !== parent.firstChild) {
+      parent.removeChild(parent.lastChild);
+      makeDecision(parent);
+      return;
+    }
     parent.appendChild(createQuad());
 
-    if (parent.childNodes.length > 3) {
-      makeBlinking(parent);
-    }
+    makeDecision(parent);
+  }
+}
+
+function makeDecision(parent) {
+  if (parent.childNodes.length > 3) {
+    makeBlinking(parent);
+    return;
+  }
+  if (parent.childNodes.length < 4) {
+    stopBlinking(parent);
+    return;
   }
 }
 
 function makeBlinking(parent) {
   const array = [...parent.childNodes];
-  const duration = array.length / 5;
+  const duration = array.length / 10;
   parent.textContent = '';
   array.forEach((element, index) => {
     element.style.animationDuration = `${duration}s`;
-    element.style.animationDelay = `${index / 5}s`;
+    element.style.animationDelay = `${index / 10}s`;
   });
   parent.append(...array);
+}
+
+function stopBlinking(parent) {
+  const array = [...parent.childNodes];
+  array.forEach((element, index) => {
+    element.style = null;
+  });
 }
