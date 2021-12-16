@@ -8,20 +8,12 @@ body {
   padding: 20px;
 }
 
-ul {
-  list-style-type: none;
-}
-
-.container {
-    text-align: center;
-}
-.row-list {
-  /* background-color: tomato; */
+#row {
   display: flex;
 }
 
-.column-list {
-  /* background-color: rgb(114, 245, 250); */
+.column {
+  background-color: rgb(114, 245, 250);
   display: flex;
   flex-direction: column;
   margin-right: 20px;
@@ -44,14 +36,14 @@ ul {
 }
 
 .jenson {
-  margin: 0 20px 20px 0;
+  margin: 0 20px 40px 0;
   display: inline-block;
   width: 40px;
   height: 40px;
   border-radius: 5px;
   background: linear-gradient(180deg, #282828, #202020);
   box-shadow: inset -8px 0 8px rgba(0,0,0,0.15), inset 0 -8px 8px rgba(0,0,0,0.25);
-  box-shadow: 0 0 0 2px rgba(0, 0, 0, 0.75), 10px 20px 25px rgba(0, 0, 0, 0.4);
+  box-shadow: 0 0 0 2px rgba(0, 0, 0, 0.75), 5px 5px 5px rgba(0, 0, 0, 0.4);
   overflow: hidden;
   color: #fff;
   font-family: consolas;
@@ -59,4 +51,8 @@ ul {
 
 .jenson:active {
   color: #888;
+}
+
+.jenson:disabled {
+  color: #444;
 }
