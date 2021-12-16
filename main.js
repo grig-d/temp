@@ -42,6 +42,9 @@ function deleteColumn() {
 function createQuad() {
   const newQuad = document.createElement('div');
   newQuad.classList.add('quad');
+  newQuad.style.animationDuration = '0.4s';
+  newQuad.style.animationDelay = '0.1s';
+
   return newQuad;
 }
 
@@ -49,30 +52,30 @@ ref.resBtn.addEventListener('click', reset);
 ref.delBtn.addEventListener('click', deleteColumn);
 ref.addBtn.addEventListener('click', addColumn);
 
-// function message(event) {
-//   if(event.target.tagName === 'LI') {
-//   console.log(event.target.tagName);
-//   console.log(event.target.parentElement.tagName);
-//   event.target.parentElement.append('li');
-//   }
+ref.row.addEventListener('click', addQuad);
 
-// }
+function addQuad(event) {
+  if (event.target.classList.contains('quad')) {
+    const parent = event.target.parentElement;
+    parent.appendChild(createQuad());
 
-// console.log(ref);
-// console.log(ref.container);
-// console.log(ref.row);
-// // function makeBlink () {
-// //     // body
-// // }
+    if (parent.childNodes.length > 3) {
+      makeBlinking(parent);
+    }
+  }
 
-// function removeColumn() {
-//   console.log('do');
-//   const row = document.getElementById('row');
-//   row.removeChild(row.lastChild);
-// }
+  // check column for able to blinking
+}
 
-// ref.del.addEventListener('click', removeColumn);
-
-//
+function makeBlinking(parent) {
+  // need number of children
+  const array = [...parent.childNodes];
+  console.log(array);
+  // clear all quad classes
+  // element.style.backgroundColor = "red"
+  // elt.style.color = null
+  array.forEach(element => element.style = null);
 
 
+
+}
