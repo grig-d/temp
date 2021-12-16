@@ -9,7 +9,7 @@ function reset() {
   ref.delBtn.disabled = false;
   ref.row.textContent = '';
   for (let i = 0; i < 8; i++) {
-    addColumn();
+    addColumn(i);
   }
 }
 
@@ -17,6 +17,7 @@ reset();
 
 function createColumn() {
   const newColumn = document.createElement('div');
+  newColumn.id = ref.row.childNodes.length + 1;
   newColumn.classList.add('column');
   newColumn.appendChild(createQuad());
   return newColumn;
@@ -42,9 +43,6 @@ function deleteColumn() {
 function createQuad() {
   const newQuad = document.createElement('div');
   newQuad.classList.add('quad');
-  newQuad.style.animationDuration = '0.4s';
-  newQuad.style.animationDelay = '0.1s';
-
   return newQuad;
 }
 
@@ -63,19 +61,15 @@ function addQuad(event) {
       makeBlinking(parent);
     }
   }
-
-  // check column for able to blinking
 }
 
 function makeBlinking(parent) {
-  // need number of children
   const array = [...parent.childNodes];
-  console.log(array);
-  // clear all quad classes
-  // element.style.backgroundColor = "red"
-  // elt.style.color = null
-  array.forEach(element => element.style = null);
-
-
-
+  const duration = array.length / 5;
+  parent.textContent = '';
+  array.forEach((element, index) => {
+    element.style.animationDuration = `${duration}s`;
+    element.style.animationDelay = `${index / 5}s`;
+  });
+  parent.append(...array);
 }
