@@ -29,8 +29,14 @@ body {
 }
 
 @keyframes blink {
+  25% {
+    background-color: black;
+  }
   50% {
     background-color: plum;
+  }
+  75% {
+    background-color: black;
   }
 }
 
@@ -41,7 +47,8 @@ body {
   height: 40px;
   border-radius: 5px;
   background: linear-gradient(180deg, #282828, #202020);
-  box-shadow: inset -8px 0 8px rgba(0,0,0,0.15), inset 0 -8px 8px rgba(0,0,0,0.25);
+  box-shadow: inset -8px 0 8px rgba(0, 0, 0, 0.15),
+    inset 0 -8px 8px rgba(0, 0, 0, 0.25);
   box-shadow: 0 0 0 2px rgba(0, 0, 0, 0.75), 5px 5px 5px rgba(0, 0, 0, 0.4);
   overflow: hidden;
   color: #fff;
