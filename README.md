@@ -1,4 +1,4 @@
-# Header 1
+# To-do List using Vanilla JavaScript
 ordinary text
 
 ## Header 2

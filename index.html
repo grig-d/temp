@@ -6,10 +6,25 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Temp</title>
     <link rel="stylesheet" href="./style.css" />
+    <script defer src="./main.js"></script>
   </head>
-  <body>   
-
-
-    <script src="./main.js"></script>
+  <body>
+    <div class="container">
+      <header>
+        <form id="new-task-form">
+          <input
+            type="text"
+            name="new-task-input"
+            id="new-task-input"
+            placeholder="create new task"
+            value=""
+          />
+          <button type="submit">Create</button>
+        </form>
+      </header>
+      <section class="tasks">
+        <ul id="tasks-list"></ul>
+      </section>
+    </div>
   </body>
 </html>
