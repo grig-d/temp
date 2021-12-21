@@ -8,6 +8,7 @@ const ref = {
 };
 
 ref.taskForm.addEventListener('submit', submit);
+ref.taskList.addEventListener('click', taskComplete);
 
 function submit(event) {
   event.preventDefault();
@@ -26,3 +27,12 @@ function addTask(newTask) {
     newTaskItem.appendChild(newTaskField);
     
 }
+
+function taskComplete(event) {
+
+  event.target.classList.toggle('completed');
+  console.log(event.target);
+}
+
+// filter => show uncompleted tasks
+// delete comleted tasks
