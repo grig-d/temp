@@ -41,34 +41,3 @@ img {
   margin: 0;
   padding: 0;
 }
-
-.container {
-  display: flex;
-  justify-content: center;
-  width: 340px;
-  /* height: 680px; */
-  height: 90vh;
-  border-radius: 4px;
-  background-color: #fff;
-  box-shadow: 0px 1px 3px rgb(0 0 0 / 12%), 0px 1px 1px rgb(0 0 0 / 14%),
-    0px 2px 1px rgb(0 0 0 / 20%);
-}
-
-.new-task-form {
-}
-.new-task-input {
-}
-
-#tasks-list {
-  list-style-type: none;
-  padding: 0;
-  background-color: plum;
-}
-
-.completed {
-  text-decoration: line-through;
-}
-
-/* box-shadow: 0px 1px 3px rgb(0 0 0 / 12%), 0px 1px 1px rgb(0 0 0 / 14%), 0px 2px 1px rgb(0 0 0 / 20%); */
-
-/* https://atlantabrewing.com/# */
