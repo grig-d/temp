@@ -1,4 +1,4 @@
-:root {
+/* :root {
   --background-primary: #f8f5eb;
   --background-footer-primary: #1e1e31;
   --background-footer-secondary: #292839;
@@ -9,7 +9,7 @@
   --form-footer: #4b4b5a;
   --yellow-on-dark: #ecaa39;
   --blue-on-dark: #2ebec7;
-}
+} */
 
 html {
   box-sizing: border-box;
@@ -25,7 +25,6 @@ html {
 
 body {
   margin: 0;
-  background-color: var(--background-primary);
   display: flex;
   justify-content: center;
   padding-top: 20px;
