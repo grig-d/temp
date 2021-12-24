@@ -10,8 +10,10 @@
       rel="stylesheet"
       href="./js/jquery-ui-1.13.0.custom/jquery-ui.min.css"
     />
+    <link rel="stylesheet" href="./css/jquery.timepicker.min.css">
     <script src="./js/jquery-3.6.0.min.js"></script>
     <script src="./js/jquery-ui-1.13.0.custom/jquery-ui.min.js"></script>
+    <script src="./js/jquery.timepicker.min.js"></script>
     <script defer src="./main.js"></script>
   </head>
   <body>
@@ -22,7 +24,16 @@
           type="text"
           id="datepicker"
           name="deadline"
-          size="10"
+          size="15"
+          placeholder="date"
+          autocomplete="off"
+          required
+        />
+        <input
+          type="text"
+          id="timepicker"
+          name="deadline"
+          size="15"
           autocomplete="off"
           required
         />

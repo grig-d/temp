@@ -66,3 +66,14 @@ $(function () {
     dateFormat: 'd M yy',
   });
 });
+
+$(document).ready(function () {
+  $('#timepicker').timepicker({
+    timeFormat: 'HH:mm',
+    defaultTime: '0',
+    interval: 1,
+    dynamic: false,
+    dropdown: true,
+    scrollbar: true,
+  });
+});
