@@ -32,7 +32,6 @@ localStorage.setItem('settings', JSON.stringify(settings));
 
 localStorage.removeItem('key');
 
-
 ////////////VENIK
 
 const clientStorage = {
@@ -52,5 +51,18 @@ const clientStorage = {
   },
 };
 
+console.log('////////');
 
-//////////////////////
+// $(function () {
+//   $('#datepicker').datepicker();
+// });
+
+$(function () {
+  $.datepicker.setDefaults({
+    changeMonth: true,
+    changeYear: true,
+  });
+  $('#datepicker').datepicker({
+    dateFormat: 'd M yy',
+  });
+});
