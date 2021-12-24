@@ -9,28 +9,28 @@ deadLine.startCountdown();
 
 //////////////////////////////////
 
-const deadlineInfo = {
-  name: 'Охота на фазана',
-  author: 'Марта Кэтра',
-  genre: 'детектив',
-  pageCount: 724,
-  publisher: 'ООО Астрель',
-};
+// const deadlineInfo = {
+//   name: 'Охота на фазана',
+//   author: 'Марта Кэтра',
+//   genre: 'детектив',
+//   pageCount: 724,
+//   publisher: 'ООО Астрель',
+// };
 
-const stringified = JSON.stringify(deadlineInfo); // object to JSON
+// const stringified = JSON.stringify(deadlineInfo); // object to JSON
 
-const parsed = JSON.parse(stringified); // JSON to object
+// const parsed = JSON.parse(stringified); // JSON to object
 
-localStorage.setItem('key', 'value');
-const value = localStorage.getItem('key');
-console.log('value from localStorage: ', value);
+// localStorage.setItem('key', 'value');
+// const value = localStorage.getItem('key');
+// console.log('value from localStorage: ', value);
 
-const settings = {
-  theme: 'dark',
-  fontSize: 14,
-};
+// const settings = {
+//   theme: 'dark',
+//   fontSize: 14,
+// };
 
-localStorage.setItem('settings', JSON.stringify(settings));
+// localStorage.setItem('settings', JSON.stringify(settings));
 
 /////////////////////////
 
@@ -75,6 +75,9 @@ ref.setDeadlineBtn.addEventListener('click', e => {
     console.log(new Date('Dec 31, 2021 22:00:00'));
     console.log(new Date(newDateTime));
     deadLine.targetDate = new Date(newDateTime);
+
+    const stringified = JSON.stringify(new Date(newDateTime)); 
+    localStorage.setItem('newDateTime', stringified);
   }
 });
 
