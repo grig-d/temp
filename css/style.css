@@ -19,7 +19,6 @@ html {
 *::before,
 *::after {
   box-sizing: inherit;
-  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
   outline: none;
 }
 
@@ -27,7 +26,6 @@ body {
   margin: 0;
   display: flex;
   justify-content: center;
-  padding-top: 20px;
 }
 
 img {
@@ -41,6 +39,66 @@ img {
   padding: 0;
 }
 
+.container {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+}
+
+.form-container {
+  margin-top: 40px;
+}
+
+.timer {
+  margin-top: 20px;
+  font-family: 'Roboto Mono', monospace;
+  text-align: center;
+  display: flex;
+}
+
+.field {
+  padding: 0 15px 10px;
+  display: flex;
+  flex-direction: column;
+  background-color: #ddd;
+  border-radius: 4px;
+}
+
+.value {
+  font-size: 80px;
+  color: #212121;
+}
+.field:not(:last-child) {
+  margin-right: 20px;
+}
+
+.label {
+  text-transform: uppercase;
+  font-size: 16px;
+  font-weight: bold;
+  color: #888888;
+}
+
+@media screen and (max-width: 480px) {
+  .value {
+    font-size: 40px;
+  }
+  .field {
+    padding: 0 7px 5px;
+    border-radius: 2px;
+  }
+  .field:not(:last-child) {
+    margin-right: 10px;
+  }
+  .label {
+    font-size: 11px;
+  }
+}
+
 #datepicker, #timepicker {
   text-align: center;
+}
+
+#setDeadlineBtn {
+  width: 107px;
 }

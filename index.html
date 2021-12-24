@@ -10,37 +10,58 @@
       rel="stylesheet"
       href="./js/jquery-ui-1.13.0.custom/jquery-ui.min.css"
     />
-    <link rel="stylesheet" href="./css/jquery.timepicker.min.css">
+    <link rel="stylesheet" href="./css/jquery.timepicker.min.css" />
     <script src="./js/jquery-3.6.0.min.js"></script>
     <script src="./js/jquery-ui-1.13.0.custom/jquery-ui.min.js"></script>
     <script src="./js/jquery.timepicker.min.js"></script>
-    <script defer src="./main.js"></script>
+    <script defer type="module" src="./main.js"></script>
   </head>
   <body>
-    <form id="datepickerForm">
-      <div>
-        <label for="deadline">Select your deadline: </label>
-        <input
-          type="text"
-          id="datepicker"
-          name="deadline"
-          size="15"
-          placeholder="date"
-          autocomplete="off"
-          required
-        />
-        <input
-          type="text"
-          id="timepicker"
-          name="deadline"
-          size="15"
-          autocomplete="off"
-          required
-        />
+    <div class="container">
+      <div class="timer" id="timer-1">
+        <div class="field">
+          <span class="value" data-value="days">-</span>
+          <span class="label">Days</span>
+        </div>
+
+        <div class="field">
+          <span class="value" data-value="hours">--</span>
+          <span class="label">Hours</span>
+        </div>
+
+        <div class="field">
+          <span class="value" data-value="mins">--</span>
+          <span class="label">Minutes</span>
+        </div>
+
+        <div class="field">
+          <span class="value" data-value="secs">--</span>
+          <span class="label">Seconds</span>
+        </div>
       </div>
-      <div>
-        <input type="submit" />
+
+      <div class="form-container">
+        <form id="datetimepicker">
+          <input
+            type="text"
+            id="datepicker"
+            name="deadline"
+            size="10"
+            autocomplete="off"
+            readonly
+            placeholder="date"
+          />
+          <input
+            type="text"
+            id="timepicker"
+            name="deadline"
+            size="10"
+            autocomplete="off"
+            readonly
+          />
+          <input type="submit" id="setDeadlineBtn" value="Set Deadline" />
+        </form>
       </div>
-    </form>
+    </div>
   </body>
 </html>

@@ -1,4 +1,15 @@
-const book = {
+import CountdownTimer from './js/countdown.js';
+
+const deadLine = new CountdownTimer({
+  selector: '#timer-1',
+  targetDate: new Date('Dec 31, 2021 22:00:00'),
+});
+
+deadLine.startCountdown();
+
+//////////////////////////////////
+
+const deadlineInfo = {
   name: 'Охота на фазана',
   author: 'Марта Кэтра',
   genre: 'детектив',
@@ -6,18 +17,9 @@ const book = {
   publisher: 'ООО Астрель',
 };
 
-console.log(book);
-console.log(typeof book);
+const stringified = JSON.stringify(deadlineInfo); // object to JSON
 
-const bookStringified = JSON.stringify(book);
-console.log(bookStringified);
-console.log(typeof bookStringified);
-
-const bookParsed = JSON.parse(bookStringified);
-console.log(bookParsed);
-console.log(typeof bookParsed);
-
-////
+const parsed = JSON.parse(stringified); // JSON to object
 
 localStorage.setItem('key', 'value');
 const value = localStorage.getItem('key');
@@ -30,32 +32,7 @@ const settings = {
 
 localStorage.setItem('settings', JSON.stringify(settings));
 
-localStorage.removeItem('key');
-
-////////////VENIK
-
-const clientStorage = {
-  getItem(key) {
-    try {
-      JSON.parse(localStorage.getItem(key));
-    } catch (error) {
-      return undefined;
-    }
-  },
-  setItem(key, payload) {
-    try {
-      localStorage.setItem(key, JSON.stringify(payload));
-    } catch (error) {
-      return undefined;
-    }
-  },
-};
-
-console.log('////////');
-
-// $(function () {
-//   $('#datepicker').datepicker();
-// });
+/////////////////////////
 
 $(function () {
   $.datepicker.setDefaults({
@@ -77,3 +54,34 @@ $(document).ready(function () {
     scrollbar: true,
   });
 });
+
+//////////////////////
+
+const ref = {
+  datePicker: document.querySelector('#datepicker'),
+  timePicker: document.querySelector('#timepicker'),
+  setDeadlineBtn: document.querySelector('#setDeadlineBtn'),
+};
+
+const today = Date();
+console.log(today);
+console.log(typeof new Date().toISOString().slice(0, 10));
+
+ref.setDeadlineBtn.addEventListener('click', e => {
+  e.preventDefault();
+  if (ref.datePicker.value) {
+    const arr = ref.datePicker.value.split(' ');
+    const newDateTime = `${arr[1]} ${arr[0]}, ${arr[2]} ${ref.timePicker.value}:00`;
+    console.log(new Date('Dec 31, 2021 22:00:00'));
+    console.log(new Date(newDateTime));
+    deadLine.targetDate = new Date(newDateTime);
+  }
+});
+
+// console.log(deadLine.targetDate);
+
+// TODO: deadline info panel about deadline date and able to update or delete countdown
+// TODO: update deadline
+// TODO: delete deadline
+// TODO: add new countdown
+// TODO: when click btn 'set deadline' date info is written to localStorage
