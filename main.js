@@ -63,7 +63,11 @@ const ref = {
   setDeadlineBtn: document.querySelector('#setDeadlineBtn'),
 };
 
-if(localStorage.getItem('DateTime')) {console.log('there is data');}
+// TODO: console log from local
+if (localStorage.getItem('DateTime')) {
+  const parsed = JSON.parse(localStorage.getItem('DateTime'))
+  console.log('there is data: ', parsed);
+}
 
 ref.setDeadlineBtn.addEventListener('click', e => {
   e.preventDefault();
@@ -74,17 +78,12 @@ ref.setDeadlineBtn.addEventListener('click', e => {
     console.log(new Date(newDateTime));
     deadLine.targetDate = new Date(newDateTime);
 
-    const stringified = JSON.stringify(new Date(newDateTime)); 
+    const stringified = JSON.stringify(new Date(newDateTime));
     localStorage.setItem('DateTime', stringified);
+
+    const parsed = JSON.parse(localStorage.getItem('DateTime'))
+    console.log('there is data: ', parsed);
   }
 });
 
 // console.log(deadLine.targetDate);
-
-// TODO: deadline info panel about deadline date and able to update or delete countdown
-// TODO: update deadline
-// TODO: delete deadline
-// TODO: add new countdown
-// TODO: when click btn 'set deadline' date info is written to localStorage
-
-// TODO: countdown.js need to message on screen when coutdown finished or when deadline is less then current date
